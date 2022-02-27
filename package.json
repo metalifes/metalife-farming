@@ -1,0 +1,31 @@
+{
+  "name": "@metalife-smart-contract/stake",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "truffle compile",
+    "console:dev": "truffle console --network dev",
+    "deploy:dev": "truffle migrate --reset --network dev",
+    "deploy:testnet": "truffle migrate --network testnet",
+    "deploy:mainnet": "truffle migrate --network mainnet",
+    "test": "truffle test test/1_pool.js --network dev",
+    "verify:testnet": "truffle run verify MetalifeCorePool@0x7E4233fa00Faa775f3Aa0321791354bac909D6fe --network testnet",
+    "flattener": "truffle-flattener contracts/MetalifeCorePool.sol",
+    "verify:mainnet": "truffle run verify MetalifeCorePool MetalifePoolFactory --network mainnet",
+    "show": "truffle exec init/deployed-address.js",
+    "exec-js": "truffle exec"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "truffle": "^5.3.7"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.2.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "bn-chai": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "truffle-plugin-verify": "^0.5.18"
+  }
+}
